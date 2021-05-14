@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Controls({ urlSubmit, urlSearch, onChange, method }) {
+function Controls({ urlSubmit, urlSearch, onChange }) {
   return (
     <div onSubmit={urlSubmit}>
       <form>
@@ -53,6 +53,16 @@ function Controls({ urlSubmit, urlSearch, onChange, method }) {
         />
         <label htmlFor="delete">DELETE</label>
         <button aria-label="go-button">Go!</button>
+        <input
+          type="text"
+          onChange={onChange}
+          name="body"
+          style={{
+            height: '200px',
+            width: '600px',
+            border: 'solid, 2px, black',
+          }}
+        ></input>
       </form>
     </div>
   );
