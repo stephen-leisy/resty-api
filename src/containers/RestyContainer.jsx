@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Controls from '../components/resty/Controls';
 import Display from '../components/resty/Display';
-import Sidebar from '../components/resty/Sidebar';
+import HistoryList from '../components/resty/HistoryList';
 import { fetchUrl } from '../services/utils';
 
 export default class RestyContainer extends Component {
@@ -57,7 +57,7 @@ export default class RestyContainer extends Component {
           urlSubmit={this.handleSearchSubmit}
           onChange={this.handleSearchChange}
         />
-        <Sidebar history={history} />
+        <HistoryList history={history} />
         <Display display={searchResults} />
       </>
     );

@@ -12,6 +12,8 @@ function Display({ display }) {
   );
 }
 
-Display.propTypes = {};
+Display.propTypes = {
+  display: PropTypes.object.isRequired
+};
 
 export default Display;

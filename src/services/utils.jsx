@@ -9,18 +9,15 @@ export const fetchUrl = async (url, method, body) => {
     const json = await res.json();
     return json
   }
-  try {
-    const response = await fetch(url, {
-      method,
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body,
-    });
-    const json = await response.json();
-    return JSON.stringify(json);
-  } catch (err) {
-    console.log(error);
-  }
+  const response = await fetch(url, {
+    method,
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body,
+  });
+  const json = await response.json();
+  return json
+
 };
