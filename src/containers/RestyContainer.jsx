@@ -20,20 +20,20 @@ export default class RestyContainer extends Component {
     this.setState({ loading: true });
     const searchResults = await fetchUrl(url, method, body);
 
-
-    this.setState(state => ({
+    this.setState((state) => ({
       searchResults,
       loading: false,
-      history: [...state.history, { method, url }]
+      history: state.history.includes({ method, url })
+        ? [state.history]
+        : [...state.history, { method, url }],
     }));
     setTimeout(() => {
       this.setState({ loading: false });
-    }, 2000);
-
+    }, 4000);
   };
 
   handleSearchChange = ({ target }) => {
-    this.setState({ [target.name]: target.value, });
+    this.setState({ [target.name]: target.value });
   };
   render() {
     console.log(
