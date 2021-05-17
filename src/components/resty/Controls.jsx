@@ -13,6 +13,7 @@ function Controls({ urlSubmit, urlSearch, onChange }) {
           onChange={onChange}
         />
         <input
+          aria-label="get"
           type="radio"
           id="get"
           name="method"
@@ -68,6 +69,10 @@ function Controls({ urlSubmit, urlSearch, onChange }) {
   );
 }
 
-Controls.propTypes = {};
+Controls.propTypes = {
+  urlSubmit: PropTypes.func.isRequired,
+  urlSearch: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default Controls;
